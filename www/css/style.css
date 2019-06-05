@@ -1,4 +1,12 @@
 body {
 
   font:24px Arial;
+
+}
+canvas{
+  border: solid;
+}
+#cestino {
+
+    width: 30%;
 }
