@@ -49,15 +49,15 @@ document.addEventListener('deviceready', function(){
       })
       $('#salva').click(function onDeviceReady(){
         alert('are you sure?')
-        
+
         window.canvas2ImagePlugin.saveImageDataToLibrary(
                 function(msg){
-                    console.log(msg);
+                    alert( msg);
                 },
                 function(err){
-                    console.log(err);
+                    alert(err);
                 },
-                document.getElementById('canvas')
+                document.getElementById('stage')
             );
 
        })
