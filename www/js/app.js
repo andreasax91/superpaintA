@@ -12,7 +12,7 @@ document.addEventListener('deviceready', function(){
       $('<div>').html('<img src="save.png" id="salva" height="50px" viewBox="0 0 450 450" width="50px">').appendTo('body')
 
       $('#stage').attr({
-        width:$(window).width()-50,
+        width:$(window).width()-30,
         height:$(window).height()
     })
       $('canvas').on('click',function() {
@@ -65,11 +65,18 @@ document.addEventListener('deviceready', function(){
        function addPhoto2Canvas(image){
          var bg = new Image();
          bg.src = image;
+         bg.onload = function() {
+           var ctx = $('#stage').get(0).getContext('2d');
+           ctx.drawImage(bg,0,0)
+         }
+
+
+
        }
        $('#camera').click( function openCam(e){
               e.preventDefault();
               navigator.camera.getPicture(
-                  _t.addPhoto2Canvas,
+                  addPhoto2Canvas,
                   function(){alert('error camera');},{}
                  )
             }

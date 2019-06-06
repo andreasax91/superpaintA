@@ -5,7 +5,7 @@
 <author email="andrea.de.giovanni91@gmail.com">JS Developer Team 518 </author>
 <content src="index.html"  />
 <preferences name="android-minSdkVersion" value="26"/>
-<plugin name="cordova-plugin-camera" source="npm" spec="" />
+<plugin name="cordova-plugin-camera" source="npm" spec="~2.1.1" />
 <plugin name="cordova-plugin-geolocation" source="npm" spec="~2.1.0"/>
 <plugin name="cordova-plugin-canvas2image" source="npm" spec="~0.7.0" />
 <platform name="android">
