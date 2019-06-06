@@ -11,8 +11,8 @@ document.addEventListener('deviceready', function(){
 
       $('<div>').html('<img src="save.png" id="salva" height="50px" viewBox="0 0 450 450" width="50px">').appendTo('body')
 
-      $('canvas').attr({
-        width:$(window).width(),
+      $('#stage').attr({
+        width:$(window).width()-50,
         height:$(window).height()
     })
       $('canvas').on('click',function() {
@@ -44,8 +44,8 @@ document.addEventListener('deviceready', function(){
 
      $('#cestino').click(function(){
        // ctx = contesto
-        var ctx = $('canvas').get(0).getContext('2d');
-        ctx.clearRect(0,0,$('#cestino').width(),$('#cestino').height());
+        var ctx = $('#stage').get(0).getContext('2d');
+        ctx.clearRect(0,0,1000,2000);
       })
       $('#salva').click(function onDeviceReady(){
         alert('are you sure?')
@@ -61,7 +61,19 @@ document.addEventListener('deviceready', function(){
             );
 
        })
-
+       $('<div>').html('<img src="photo-camera.png" id="camera" height="50px" viewBox="0 0 450 450" width="50px">').appendTo('body')
+       function addPhoto2Canvas(image){
+         var bg = new Image();
+         bg.src = image;
+       }
+       $('#camera').click( function openCam(e){
+              e.preventDefault();
+              navigator.camera.getPicture(
+                  _t.addPhoto2Canvas,
+                  function(){alert('error camera');},{}
+                 )
+            }
+          )
     });
 
 });
